@@ -1,18 +1,22 @@
-# AI 찐친 챌린지
+# AI 찐친 챌린지 - 챌린지 작성하기
 
-AI 찐친 챌린지 공식 웹사이트 소스입니다.
+- 챌린지 페이지: Next.js
+- 매일 1개 챌린지 자동 생성
+- GitHub Actions + Vercel 배포 준비 완료
 
-## 빠른 실행
+## 실행
 
-- `index.html`을 그대로 배포하면 정적 랜딩 페이지로 동작합니다.
+```bash
+npm install
+npm run dev
+```
 
-## 배포 전 체크
+## 파일 구성
+- `public/challenges.json` : 날짜별 챌린지 데이터
+- `scripts/generate-challenge.js` : 매일 1개 생성
+- `.github/workflows/daily-challenge.yml` : GitHub Action 스케줄(매일 KST 00:00)
 
-1. 제목/카피 수정
-2. 참가 신청 폼 링크 변경
-3. 문의 메일 변경
-4. 필요 시 이미지/로고 추가 (`/Challenge` 폴더 내에 배치)
-
-## 로컬 확인
-
-브라우저에서 `index.html` 파일을 열면 바로 확인할 수 있습니다.
+## 수동으로 과거 채움
+```bash
+npm run generate:backfill
+```
